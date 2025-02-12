@@ -1,0 +1,32 @@
+var players = { 
+    "Ropz" : {
+            "rolle" : "rifler" ,
+            "team" : "Vitality",
+            "majors" : "1"
+    },
+    "Monesy" : {
+        "rolle" : "awper",
+        "team" : "G2",
+        "majors" : "0"
+    },
+    "Broky" : {
+        "rolle" : "awper",
+        "team" : "Faze",
+        "majors" : "1"
+    }
+}
+var Mysafety = JSON.parse(JSON.stringify(players));
+
+function UpdateRecords(player,topic,content){
+    if (players[player] == undefined){
+        players[player] = {};
+        console.log(player  + " Created ! ")
+    }
+    if (content === ""){
+        delete players.player.topic;
+    }else{
+        players[player][topic] = content
+    }
+}
+UpdateRecords("S1mple","rolle","awper")
+console.log(players)
