@@ -1,0 +1,37 @@
+var players = { 
+    "Ropz" : {
+            "rolle" : "rifler" ,
+            "team" : "Vitality",
+            "majors" : "1"
+    },
+    "Monesy" : {
+        "rolle" : "awper",
+        "team" : "G2",
+        "majors" : "0"
+    },
+    "Broky" : {
+        "rolle" : "awper",
+        "team" : "Faze",
+        "majors" : "1"
+    }
+}
+var Mysafety = JSON.parse(JSON.stringify(players));
+function DataSeeker(player,context){
+    var obKeys = Object.keys(players);
+    for ( var i = 0 ; i < obKeys.length ; i++){
+        const Nowkey = obKeys[i];
+        if (Nowkey === player){
+            if (players[Nowkey].hasOwnProperty(context)){
+                return players[Nowkey][context];
+                
+            }
+            else {
+                return "Context not found"
+            }
+        }
+    }
+    return " player not found ! ";
+    
+}
+
+console.log(DataSeeker("Broky","rolle"))
